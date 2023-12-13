@@ -23,6 +23,7 @@ class ConverterViewModel constructor(private val converterRepository: ConverterR
 
     )
 
+    val resultList = converterRepository.getAllResults()
     fun addResult(message1:String, message2:String){
         viewModelScope.launch(Dispatchers.IO) {
             converterRepository.insertResult(
